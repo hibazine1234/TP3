@@ -1,0 +1,105 @@
+body{
+    font-family: Arial, sans-serif ;
+    text-align: center;
+    
+  background-color: #f9f9f9;
+  
+}
+
+.nom {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+img{ 
+border-radius: 8ch;
+    margin-left: 20px;
+    
+
+    
+}
+.Formation{
+    border: 2px solid;
+    margin: 12px;
+    border-radius: 15px;
+}
+.Compétences{
+        border: 2px solid;
+        margin: 12px;
+        border-radius: 15px;
+}
+.Experience{
+    border: 2px solid;
+    margin: 12px;
+    border-radius: 15px;
+}
+.Langue{
+    border: 2px solid;
+    margin: 12px;
+    border-radius: 15px;
+}
+.intérit{
+    border: 2px solid;
+    margin: 12px;
+    border-radius: 15px;
+     
+}
+*{
+    margin: 40 auto;
+}
+h2{
+    color: blue;
+}
+ul {
+  list-style-position: inside;
+  margin-left: 0;
+  padding-left: 0;
+}
+ul li {
+  margin: 5px 0; 
+ 
+}
+h1 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+#button {
+  background-color: #121212;
+  color: gray;
+  font-size: larger;
+  margin-right: 100% ;
+  padding: 8px 16px;
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode .nom,
+.dark-mode .Formation,
+.dark-mode .Compétences,
+.dark-mode .Experience,
+.dark-mode .Langue,
+.dark-mode .intérit {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+
+
+
+body.dark-mode #mode-toggle {
+  background-color: #333;
+  color: white;
+}
+
+
+ 
+
