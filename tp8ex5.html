@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <form method="post">
+    <input type="text" name="nom" required placeholder="الاسم"><br>
+    <textarea name="msg" required placeholder="رسالتك"></textarea><br>
+    <button type="submit">نشر</button>
+</form>
+
+<?php
+$file = "livre.txt";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nom = $_POST['nom'];
+    $msg = $_POST['msg'];
+    $date = date("Y-m-d H:i");
+
+    $ligne = "$date - $nom: $msg\n";
+    file_put_contents($file, $ligne, FILE_APPEND);
+}
+
+if (file_exists($file)) {
+    echo "<h3>الرسائل:</h3>";
+    $messages = file($file);
+    foreach ($messages as $m) {
+        echo "<p>" . htmlspecialchars($m) . "</p>";
+    }
+}
+?>
+
+</body>
+</html>
