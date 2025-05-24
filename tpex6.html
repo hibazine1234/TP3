@@ -1,0 +1,36 @@
+<form method="post">
+    <p>1. عاصمة المغرب ؟<br>
+        <select name="q1">
+            <option value="Rabat">الرباط</option>
+            <option value="Casa">الدار البيضاء</option>
+        </select>
+    </p>
+    <p>2. 5 + 3 ؟<br>
+        <select name="q2">
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+    </p>
+    <p>3. لون السماء ؟<br>
+        <select name="q3">
+            <option value="Bleu">أزرق</option>
+            <option value="Vert">أخضر</option>
+        </select>
+    </p>
+    <button type="submit">تصحيح</button>
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $rep = ["q1" => "Rabat", "q2" => "8", "q3" => "Bleu"];
+    $score = 0;
+
+    foreach ($rep as $q => $r) {
+        if ($_POST[$q] == $r) $score++;
+    }
+
+    echo "نقطتك : $score / 3";
+}
+?>
+
+
