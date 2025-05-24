@@ -1,0 +1,19 @@
+<form method="post">
+    <input type="number" name="long" placeholder="الطول" required>
+    <button type="submit">توليد</button>
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $long = $_POST['long'];
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()';
+    $mdp = '';
+
+    for ($i = 0; $i < $long; $i++) {
+        $mdp .= $chars[rand(0, strlen($chars)-1)];
+    }
+
+    echo "كلمة السر: $mdp";
+}
+?>
+
