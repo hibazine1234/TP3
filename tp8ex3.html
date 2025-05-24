@@ -1,0 +1,20 @@
+<form method="post">
+    <input type="text" name="nom" placeholder="الاسم" required><br>
+    <input type="email" name="email" placeholder="البريد" required><br>
+    <textarea name="msg" placeholder="رسالتك" required></textarea><br>
+    <button type="submit">إرسال</button>
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nom = $_POST['nom'];
+    $email = $_POST['email'];
+    $msg = $_POST['msg'];
+
+    if (!empty($nom) && !empty($email) && !empty($msg)) {
+        echo "الاسم: $nom<br>البريد: $email<br>الرسالة: $msg";
+    } else {
+        echo "كل الخانات ضرورية.";
+    }
+}
+?>
