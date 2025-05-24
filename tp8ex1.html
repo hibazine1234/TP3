@@ -1,0 +1,30 @@
+<form method="post">
+    <input type="number" name="n1" required>
+    <select name="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" name="n2" required>
+    <button type="submit">حساب</button>
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $a = $_POST['n1'];
+    $b = $_POST['n2'];
+    $op = $_POST['op'];
+    $res = 0;
+
+    if ($op == "+") $res = $a + $b;
+    elseif ($op == "-") $res = $a - $b;
+    elseif ($op == "*") $res = $a * $b;
+    elseif ($op == "/") {
+        if ($b != 0) $res = $a / $b;
+        else echo "خطأ: القسمة على 0";
+    }
+
+    echo "النتيجة : $res";
+}
+?>
